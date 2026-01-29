@@ -25,7 +25,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 500px;
+    max-width: 650px; /* Aumentado para acomodar o livro aberto lateralmente */
     padding: 20px;
     z-index: 10;
 }
@@ -163,10 +163,11 @@ input[type="number"] {
 
 /* Estilo do Livro Gótico */
 .book-container {
-    perspective: 1000px;
+    perspective: 1500px; /* Aumentado para um efeito 3D mais suave */
     display: flex;
     justify-content: center;
     margin-top: 40px;
+    padding: 20px 0;
 }
 
 .book {
@@ -176,10 +177,11 @@ input[type="number"] {
     transform-style: preserve-3d;
     transition: transform 1s;
     cursor: pointer;
+    transform-origin: left; /* Define a lombada como eixo de rotação */
 }
 
 .book.open {
-    transform: rotateY(-180deg) translateX(120px);
+    transform: rotateY(-180deg) translateX(-120px); /* Rotaciona e centraliza o spread */
 }
 
 .book-cover, .book-inside {
@@ -313,12 +315,13 @@ input[type="number"] {
     }
 
     .book {
-        width: 180px;
-        height: 250px;
+        width: 160px;
+        height: 240px;
+        transform-origin: left;
     }
 
     .book.open {
-        transform: rotateY(-180deg) translateX(90px);
+        transform: rotateY(-180deg) translateX(-80px);
     }
 
     .book-cover span {
