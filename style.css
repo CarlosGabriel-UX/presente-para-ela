@@ -161,117 +161,102 @@ input[type="number"] {
     animation: fadeIn 1s ease-in;
 }
 
-/* Estilo do Livro Gótico */
-.book-container {
-    perspective: 1500px; /* Aumentado para um efeito 3D mais suave */
+/* Estilo do Post Literário */
+.literary-post {
+    background: #111;
+    border: 1px solid var(--gothic-dark-red);
+    border-radius: 8px;
+    margin-top: 30px;
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.post-header {
     display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    padding: 20px 0;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #222;
 }
 
-.book {
-    width: 240px;
-    height: 340px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 1s;
-    cursor: pointer;
-    transform-origin: left; /* Define a lombada como eixo de rotação */
-}
-
-.book.open {
-    transform: rotateY(-180deg) translateX(-120px); /* Rotaciona e centraliza o spread */
-}
-
-.book-cover, .book-inside {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 2px 10px 10px 2px;
-    backface-visibility: hidden;
+.user-avatar {
+    width: 35px;
+    height: 35px;
+    background: var(--gothic-dark-red);
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    box-shadow: 5px 5px 25px rgba(0,0,0,0.8);
+    margin-right: 10px;
 }
 
-.book-cover {
-    background-color: #2a0a0a;
-    background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');
-    color: var(--gothic-silver);
-    z-index: 2;
-    border-left: 12px solid #1a0505;
-    border: 1px solid #3d1010;
+.user-info {
+    display: flex;
+    flex-direction: column;
 }
 
-.book-cover span {
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 1px 1px 2px #000;
-}
-
-.book-inside {
-    background-color: #e8e4d9; /* Cor de papel envelhecido */
-    color: #1a1a1a;
-    transform: rotateY(180deg);
-    z-index: 1;
+.user-info strong {
     font-size: 0.9rem;
-    text-align: left;
-    align-items: flex-start;
-    overflow-y: auto;
-    border: 1px solid #c4c1b5;
+    color: var(--gothic-text);
 }
 
-.book-inside p {
-    margin-bottom: 10px;
-    line-height: 1.4;
+.user-info span {
+    font-size: 0.75rem;
+    color: var(--gothic-silver);
+}
+
+.post-content {
+    padding: 0;
 }
 
 .photos-grid {
     display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-bottom: 25px;
-    width: 100%;
+    flex-direction: column; /* No post literário, as fotos ficam uma abaixo da outra para destaque */
+    gap: 2px;
 }
 
 .photo-frame {
-    background: #fff;
-    padding: 10px 10px 25px 10px;
-    box-shadow: 3px 3px 15px rgba(0,0,0,0.6);
-    border: 1px solid #ccc;
-    width: 48%;
-    transition: transform 0.3s;
-    flex-shrink: 0;
+    width: 100%;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
 }
 
 .photo-frame img {
     width: 100%;
-    height: 200px; /* Aumentado para mostrar mais da foto vertical */
+    height: auto;
+    max-height: 400px;
     object-fit: cover;
-    object-position: center 20%; /* Foca um pouco mais no topo para pegar os rostos */
-    display: block;
-    filter: sepia(0.2);
+    filter: none; /* Cores reais no post */
 }
 
-.tilt-left {
-    transform: rotate(-3deg);
+.post-caption {
+    padding: 15px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--gothic-text);
 }
 
-.tilt-right {
-    transform: rotate(3deg);
+.post-caption p {
+    margin-bottom: 12px;
 }
 
-.photo-frame:hover {
-    transform: rotate(0deg) scale(1.1);
-    z-index: 5;
+.post-footer {
+    padding: 12px;
+    border-top: 1px solid #222;
+    background: #0a0a0a;
 }
+
+.likes {
+    font-size: 0.85rem;
+    color: var(--gothic-silver);
+    font-weight: bold;
+}
+
+/* Esconde estilos do livro antigo que não serão mais usados */
+.book-container, .book { display: none !important; }
 
 .muted {
     color: var(--gothic-dark-red);
