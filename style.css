@@ -210,6 +210,42 @@ input[type="number"] {
     margin-bottom: 10px;
 }
 
+.photos-grid {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.photo-frame {
+    background: white;
+    padding: 8px 8px 20px 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border: 1px solid #ddd;
+    width: 45%;
+    transition: transform 0.3s;
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.tilt-left {
+    transform: rotate(-3deg);
+}
+
+.tilt-right {
+    transform: rotate(3deg);
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.1);
+    z-index: 5;
+}
+
 .muted {
     color: var(--romantic-pink);
     font-size: 0.9rem;
