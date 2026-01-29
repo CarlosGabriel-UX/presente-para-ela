@@ -170,8 +170,8 @@ input[type="number"] {
 }
 
 .book {
-    width: 180px;
-    height: 250px;
+    width: 240px;
+    height: 340px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s;
@@ -179,7 +179,7 @@ input[type="number"] {
 }
 
 .book.open {
-    transform: rotateY(-180deg) translateX(90px);
+    transform: rotateY(-180deg) translateX(120px);
 }
 
 .book-cover, .book-inside {
@@ -249,7 +249,7 @@ input[type="number"] {
 
 .photo-frame img {
     width: 100%;
-    height: 90px;
+    height: 150px;
     object-fit: cover;
     display: block;
     filter: sepia(0.3); /* Toque vintage */
@@ -306,25 +306,25 @@ input[type="number"] {
     /* Ajuste do Livro no Celular */
     .book-container {
         margin-top: 30px;
-        height: 320px; /* Garante espaço para o livro aberto */
+        height: 400px; /* Aumentado para o novo tamanho */
     }
 
     .book {
-        width: 140px;
-        height: 200px;
+        width: 180px;
+        height: 250px;
     }
 
     .book.open {
-        transform: rotateY(-180deg) translateX(70px);
+        transform: rotateY(-180deg) translateX(90px);
     }
 
     .book-cover span {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .book-inside {
         padding: 15px;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
     .photos-grid {
@@ -334,11 +334,11 @@ input[type="number"] {
     }
 
     .photo-frame {
-        width: 80%;
+        width: 90%;
     }
 
     .photo-frame img {
-        height: 80px;
+        height: 120px;
     }
 
     .tilt-left, .tilt-right {
