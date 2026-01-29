@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma surpresa para você ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hearts-container"></div>
+    
+    <main class="container">
+        <div id="proposal-card" class="card">
+            <h1 id="main-title">Oi meu amor... ❤️</h1>
+            <p id="main-text">Eu estava pensando em nós dois e no quanto você é especial para mim.</p>
+            
+            <div id="question-section">
+                <h2>Você aceita namorar comigo?</h2>
+                <div class="buttons">
+                    <button id="btn-sim" class="btn primary">SIM! 😍</button>
+                    <button id="btn-nao" class="btn secondary">Não 😢</button>
+                </div>
+            </div>
+
+            <div id="success-section" class="hidden">
+                <h2>EBAAAA! ❤️</h2>
+                <p>Você me faz a pessoa mais feliz do mundo!</p>
+                <div class="ring-info">
+                    <p>Agora eu preciso de uma informação muito importante...</p>
+                    <label for="ring-size">Qual o tamanho da sua aliança?</label>
+                    <input type="number" id="ring-size" placeholder="Ex: 16" min="1" max="35">
+                    <button id="btn-save-ring" class="btn primary">Enviar para ele ❤️</button>
+                </div>
+                <p id="final-message" class="hidden">Obrigado meu amor! Mal posso esperar para colocar ela no seu dedo. 🥰</p>
+            </div>
+
+            <div id="book-section" class="hidden">
+                <hr style="margin: 30px 0; border: 0; border-top: 1px solid var(--romantic-pink); opacity: 0.3;">
+                <h3>Uma surpresa literária para você... 📚</h3>
+                <p>Como você ama ler, criei uma pequena biblioteca da nossa história.</p>
+                
+                <div class="book-container">
+                    <div class="book" id="our-book">
+                        <div class="book-cover">
+                            <span>Nossa História</span>
+                            <small>Vol. 1</small>
+                        </div>
+                        <div class="book-inside">
+                            <p><strong>Capítulo 1: O Início</strong></p>
+                            <p>Tudo começou de um jeito especial...</p>
+                            <p><em>(Você pode personalizar este texto depois!)</em></p>
+                            <p>E agora, começamos o capítulo mais lindo de todos: <strong>O Nosso Namoro.</strong></p>
+                            <p>Te amo! ❤️</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="muted" style="margin-top: 15px; font-size: 0.8rem;">Toque no livro para abrir</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
