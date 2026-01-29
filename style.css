@@ -1,22 +1,26 @@
 :root {
+    --gothic-red: #800000;
+    --gothic-dark-red: #4a0404;
+    --gothic-black: #0d0d0d;
+    --gothic-card: #1a1a1a;
+    --gothic-text: #e0e0e0;
+    --gothic-silver: #b0b0b0;
     --romantic-pink: #ff85a2;
-    --romantic-red: #ff4d6d;
-    --romantic-bg: #fff0f3;
-    --text-color: #590d22;
-    --white: #ffffff;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--romantic-bg);
-    color: var(--text-color);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background-color: var(--gothic-black);
+    color: var(--gothic-text);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-image: radial-gradient(circle at center, #1a0505 0%, #0d0d0d 100%);
 }
 
 .container {
@@ -27,13 +31,13 @@ body {
 }
 
 .card {
-    background: var(--white);
+    background: var(--gothic-card);
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(255, 77, 109, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 15px rgba(128, 0, 0, 0.3);
     text-align: center;
-    border: 2px solid var(--romantic-pink);
-    animation: fadeIn 1s ease-out;
+    border: 1px solid var(--gothic-dark-red);
+    animation: fadeIn 1.5s ease-out;
 }
 
 @keyframes fadeIn {
@@ -42,13 +46,18 @@ body {
 }
 
 h1 {
-    color: var(--romantic-red);
+    color: var(--gothic-red);
     margin-bottom: 10px;
+    font-family: 'Cinzel', 'Georgia', serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 h2 {
     font-size: 1.5rem;
     margin-top: 30px;
+    color: var(--gothic-silver);
 }
 
 .buttons {
@@ -64,26 +73,28 @@ h2 {
     padding: 12px 30px;
     font-size: 1.1rem;
     font-weight: bold;
-    border-radius: 50px;
-    border: none;
+    border-radius: 4px;
+    border: 1px solid var(--gothic-dark-red);
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    font-family: inherit;
 }
 
 .btn.primary {
-    background-color: var(--romantic-red);
-    color: white;
+    background-color: var(--gothic-dark-red);
+    color: var(--gothic-text);
 }
 
 .btn.primary:hover {
-    background-color: #ff0a54;
+    background-color: var(--gothic-red);
     transform: scale(1.05);
+    box-shadow: 0 0 15px var(--gothic-red);
 }
 
 .btn.secondary {
-    background-color: #dee2e6;
-    color: #495057;
+    background-color: #333;
+    color: var(--gothic-silver);
     position: relative;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -95,9 +106,11 @@ h2 {
 .ring-info {
     margin-top: 30px;
     padding: 20px;
-    background-color: var(--romantic-bg);
-    border-radius: 15px;
+    background-color: #111;
+    border-radius: 5px;
+    border: 1px solid var(--gothic-dark-red);
     animation: slideIn 0.5s ease-out;
+    transition: all 0.5s ease;
 }
 
 @keyframes slideIn {
@@ -109,8 +122,10 @@ input[type="number"] {
     padding: 10px;
     width: 80px;
     margin: 15px 0;
-    border: 2px solid var(--romantic-pink);
-    border-radius: 10px;
+    background: #000;
+    border: 1px solid var(--gothic-dark-red);
+    color: var(--gothic-text);
+    border-radius: 4px;
     font-size: 1.2rem;
     text-align: center;
     outline: none;
@@ -127,10 +142,11 @@ input[type="number"] {
 
 .heart {
     position: absolute;
-    color: var(--romantic-red);
+    color: var(--gothic-dark-red);
     font-size: 20px;
     animation: float 4s linear infinite;
     opacity: 0.6;
+    filter: drop-shadow(0 0 5px rgba(128,0,0,0.5));
 }
 
 @keyframes float {
@@ -141,11 +157,11 @@ input[type="number"] {
 #final-message {
     margin-top: 20px;
     font-weight: bold;
-    color: var(--romantic-red);
+    color: var(--gothic-red);
     animation: fadeIn 1s ease-in;
 }
 
-/* Estilo do Livro */
+/* Estilo do Livro Gótico */
 .book-container {
     perspective: 1000px;
     display: flex;
@@ -172,42 +188,47 @@ input[type="number"] {
     height: 100%;
     top: 0;
     left: 0;
-    border-radius: 5px 15px 15px 5px;
+    border-radius: 2px 10px 10px 2px;
     backface-visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+    box-shadow: 5px 5px 25px rgba(0,0,0,0.8);
 }
 
 .book-cover {
-    background-color: var(--romantic-red);
-    color: white;
+    background-color: #2a0a0a;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-leather.png');
+    color: var(--gothic-silver);
     z-index: 2;
-    border-left: 10px solid #d00000;
+    border-left: 12px solid #1a0505;
+    border: 1px solid #3d1010;
 }
 
 .book-cover span {
     font-size: 1.4rem;
     font-weight: bold;
     text-align: center;
+    text-shadow: 1px 1px 2px #000;
 }
 
 .book-inside {
-    background-color: #fff;
-    color: #333;
+    background-color: #e8e4d9; /* Cor de papel envelhecido */
+    color: #1a1a1a;
     transform: rotateY(180deg);
     z-index: 1;
     font-size: 0.9rem;
     text-align: left;
     align-items: flex-start;
     overflow-y: auto;
+    border: 1px solid #c4c1b5;
 }
 
 .book-inside p {
     margin-bottom: 10px;
+    line-height: 1.4;
 }
 
 .photos-grid {
@@ -218,19 +239,20 @@ input[type="number"] {
 }
 
 .photo-frame {
-    background: white;
-    padding: 8px 8px 20px 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    border: 1px solid #ddd;
+    background: #fff;
+    padding: 6px 6px 18px 6px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    border: 1px solid #ccc;
     width: 45%;
     transition: transform 0.3s;
 }
 
 .photo-frame img {
     width: 100%;
-    height: 100px;
+    height: 90px;
     object-fit: cover;
     display: block;
+    filter: sepia(0.3); /* Toque vintage */
 }
 
 .tilt-left {
@@ -247,6 +269,6 @@ input[type="number"] {
 }
 
 .muted {
-    color: var(--romantic-pink);
+    color: var(--gothic-dark-red);
     font-size: 0.9rem;
 }

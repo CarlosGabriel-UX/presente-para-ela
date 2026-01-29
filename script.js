@@ -88,9 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ringSizeInput.disabled = true;
         btnSaveRing.disabled = true;
         finalMessage.classList.remove('hidden');
-        
-        // Mostra o botão da biblioteca
-        document.getElementById('book-section').classList.remove('hidden');
     });
 
     // Lógica do Livro
