@@ -85,6 +85,7 @@ h2 {
     background-color: #dee2e6;
     color: #495057;
     position: relative;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .hidden {

@@ -26,26 +26,38 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(createHeart, 300);
 
     // Lógica do botão NÃO fugir
-    btnNao.addEventListener('mouseover', () => {
+    function moverBotaoNao() {
         const containerWidth = window.innerWidth;
         const containerHeight = window.innerHeight;
         
         // Gera posições aleatórias, mas mantém dentro da tela
-        const newX = Math.random() * (containerWidth - btnNao.offsetWidth);
-        const newY = Math.random() * (containerHeight - btnNao.offsetHeight);
+        const padding = 20;
+        const newX = Math.random() * (containerWidth - btnNao.offsetWidth - padding * 2) + padding;
+        const newY = Math.random() * (containerHeight - btnNao.offsetHeight - padding * 2) + padding;
 
         btnNao.style.position = 'fixed';
         btnNao.style.left = `${newX}px`;
         btnNao.style.top = `${newY}px`;
-    });
+        btnNao.style.zIndex = '1000';
+    }
 
-    // Se clicar no NÃO por acaso (mobile ou sorte)
-    btnNao.addEventListener('click', () => {
-        alert('Tente novamente! Essa opção está com defeito. 😉');
+    // Move quando o mouse chega perto
+    btnNao.addEventListener('mouseover', moverBotaoNao);
+    
+    // Move automaticamente a cada 1 segundo (mesmo sem o mouse perto)
+    let intervalNo = setInterval(moverBotaoNao, 1000);
+
+    // Se ela conseguir clicar (muito difícil)
+    btnNao.addEventListener('click', (e) => {
+        e.preventDefault();
+        moverBotaoNao();
+        alert('Ops! Essa opção está com defeito. Tente o outro botão! 😉');
     });
 
     // Lógica do botão SIM
     btnSim.addEventListener('click', () => {
+        clearInterval(intervalNo); // Para de pular o botão Não
+        btnNao.classList.add('hidden'); // Some com o botão Não
         questionSection.classList.add('hidden');
         successSection.classList.remove('hidden');
         
